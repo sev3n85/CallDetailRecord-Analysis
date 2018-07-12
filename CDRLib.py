@@ -45,7 +45,7 @@ class call:
     def getTIMEZONE(self):
         if 7<=int(str(self.CONNECTION_TIME)[11:13])<15:
             return 'Giorno'
-        elif 15<=int(str(self.CONNECTION_TIME)[11:13])<23:
+        elif 15<=int(str(self.CONNECTION_TIME)[11:13])<18:
             return 'Pomeriggio'
         else:
             return 'Notte'            
