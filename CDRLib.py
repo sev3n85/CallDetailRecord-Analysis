@@ -44,11 +44,11 @@ class call:
         return str(self.CONNECTION_TIME)[11:13]
     def getTIMEZONE(self):
         if 7<=int(str(self.CONNECTION_TIME)[11:13])<15:
-            return 'Day'
+            return 'Giorno'
         elif 15<=int(str(self.CONNECTION_TIME)[11:13])<23:
-            return 'Evening'
+            return 'Pomeriggio'
         else:
-            return 'Night'            
+            return 'Notte'            
     def getSEC(self):
         return self.CALL_DURATION_SEC
     def getREASON(self):
@@ -80,9 +80,9 @@ def networkERR(alist):
         total +=1
         if i.getREASON()== 'NETWORK_ERROR' :
             errorcounter += 1
-    print("The amount of NETWORK_ERROR calls are {}.".format(errorcounter))
-    print("Total calls are {}.".format(total))
-    print("NETWORK_ERROR rate is {:.1%}\n".format(errorcounter/total))
+    print("Il numero di chiamate con NETWORK_ERROR sono {}.".format(errorcounter))
+    print("Il numero totale di chiamate sono {}.".format(total))
+    print("La percentuale di NETWORK_ERROR {:.1%}\n".format(errorcounter/total))
 ###############################################
 # Network error analysis by timezone
 ###############################################
@@ -132,14 +132,14 @@ def call_by_time(data):
             eveningcall += 1
         else:
             nightcall += 1
-    print('There are {} day time calls'.format(daycall))
-    print('There are {} evening time calls'.format(eveningcall))
-    print('There are {} night time calls'.format(nightcall))
+    print('Ci sono {} chiamate giornaliere'.format(daycall))
+    print('Ci sono {} chiamate pomeridiane'.format(eveningcall))
+    print('Ci sono {} chiamate notturne'.format(nightcall))
     print('********************')
 
     # Pie chart ploted by timezone
     # The slices will be ordered and plotted counter-clockwise.
-    labels = 'Day', 'Evening', 'Night'
+    labels = 'Giorno', 'Pomeriggio', 'Notte'
     sizes = [daycall,eveningcall,nightcall]
     colors = ['yellowgreen', 'gold', 'lightskyblue']
     explode = (0.1, 0.1, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
