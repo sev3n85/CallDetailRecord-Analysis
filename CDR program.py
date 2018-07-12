@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from CDRLib import *
 
 # Input CSV data
-print("This is a program for Call Detail Record analysis")
-print("Our demonstration data is input.csv")
+print("Questo è un programma per l'analisi dei CDR")
+print("Il file deve essere nominato in input.csv")
 name = "input.csv"  # a demonstration CSV file
 
 # Use a customized readCSV function to read CSV file
@@ -18,11 +18,11 @@ myList = readCSV(name)
 data=[makecall(i) for i in myList]  
 
 # Analysis options
-print("There are four data analysis are available\n")
-print("A: The amount and ratio of Network ERROR analysis")
-print("B: The amount and ratio of Network ERROR analysis by timezone")
-print("C: The amount of call time analysis by timezone")
-print("D: Call time and cost analysis in different days\n")
+print("Ci sono quattro analisi disponibili\n")
+print("A: Il numero e la percentuale di ERRORI di rete")
+print("B: Il numero e la percentuale di ERRORI per timezone")
+print("C: La somma di chiamate per timezone")
+print("D: Durata delle chiamate e costi in giornate differenti\n")
 # Decision for User
 end = "y"
 while end =="y":
@@ -37,7 +37,7 @@ while end =="y":
         call_by_day(data)
         
     end=input("\n keep analyzing (y/n): ")
-print("Thank you~")
+print("Grazie~")
         
         
 
